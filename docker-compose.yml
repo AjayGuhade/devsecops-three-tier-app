@@ -1,40 +1,66 @@
-version: "3.9"
-
 services:
-
-  mysql:
-    image: mysql:8.0
+  mysql-db:
+    image: mysql:8.4
     container_name: mysql-db
+    restart: unless-stopped
+
     environment:
       MYSQL_ROOT_PASSWORD: root123
       MYSQL_DATABASE: employee_db
+
+    ports:
+      - "3306:3306"
+
     volumes:
       - mysql-data:/var/lib/mysql
+      - ./app/database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
     networks:
-      - three-tier-network
+      - app-network
 
   backend:
-    build: ./backend
-    container_name: flask-container
+    build:
+      context: ./app/backend
+      dockerfile: Dockerfile
+
+    container_name: backend
+    restart: unless-stopped
+
     ports:
       - "5000:5000"
+
+    environment:
+      DB_HOST: mysql-db
+      DB_USER: root
+      DB_PASSWORD: root123
+      DB_NAME: employee_db
+
     depends_on:
-      - mysql
+      - mysql-db
+
     networks:
-      - three-tier-network
+      - app-network
 
   frontend:
-    build: ./frontend
-    container_name: nginx-container
+    build:
+      context: ./app/frontend
+      dockerfile: Dockerfile
+
+    container_name: frontend
+    restart: unless-stopped
+
     ports:
       - "80:80"
+
     depends_on:
       - backend
+
     networks:
-      - three-tier-network
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
   mysql-data:
-
-networks:
-  three-tier-network:
