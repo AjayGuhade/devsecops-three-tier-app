@@ -201,4 +201,13 @@ GitHub: https://github.com/AjayGuhade
 
 LinkedIn: https://linkedin.com/in/ajayguhade2004
 
+## Acknowledgements
+
+This project is based on the open-source repository
+"Docker-three-tier-application" by govindk0043-eng.
+
+The application code served as the foundation for this project.
+
+This repository extends it with a production-style DevSecOps implementation including Docker optimization, CI/CD with GitHub Actions, container security scanning using Trivy, Kubernetes deployment, monitoring with Prometheus and Grafana, Infrastructure as Code using Terraform, and production-ready documentation.
+
 ---
