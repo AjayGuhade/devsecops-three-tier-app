@@ -29,3 +29,19 @@ jobs:
         run: |
           docker --version
           docker compose version
+
+      
+      - name: Build Backend Docker Image
+        run: |
+          docker build \
+            -t devsecops-backend:latest \
+            -f app/backend/Dockerfile \
+            app/backend 
+
+
+      - name: Build Frontend Docker Image
+        run: |
+          docker build \
+            -t devsecops-frontend:latest \
+            -f app/frontend/Dockerfile \
+            app/frontend
