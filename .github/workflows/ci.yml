@@ -44,4 +44,16 @@ jobs:
           docker build \
             -t devsecops-frontend:latest \
             -f app/frontend/Dockerfile \
-            app/frontend
+            app/frontend      
+
+
+      - name: Lint Backend Dockerfile
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: app/backend/Dockerfile
+
+
+      - name: Lint Frontend Dockerfile
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: app/frontend/Dockerfile
