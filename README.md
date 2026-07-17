@@ -63,35 +63,46 @@ Monitoring
 
 # ⚙ Tech Stack
 
-| Category | Technologies |
-|-----------|--------------|
-| Cloud | AWS, Google Cloud |
-| Containers | Docker, Docker Compose |
-| Orchestration | Kubernetes |
-| CI/CD | GitHub Actions |
-| Infrastructure | Terraform |
-| Monitoring | Prometheus, Grafana |
-| Security | Kubernetes Secrets, Trivy *(planned)* |
-| OS | Linux |
-| Scripting | Bash |
-| Version Control | Git, GitHub |
+| Category         | Technologies                              |
+| ---------------- | ----------------------------------------- |
+| Language         | Python                                    |
+| Frontend         | HTML, Nginx                               |
+| Backend          | Flask                                     |
+| Database         | MySQL                                     |
+| Containerization | Docker, Docker Compose                    |
+| CI/CD            | GitHub Actions                            |
+| Security         | Trivy, Hadolint, Gitleaks *(Coming Soon)* |
+| Orchestration    | Kubernetes *(Coming Soon)*                |
+| Monitoring       | Prometheus, Grafana *(Coming Soon)*       |
+| IaC              | Terraform *(Coming Soon)*                 |
 
 ---
 
 # 📂 Repository Structure
 
 ```text
-Cloud-Native-DevSecOps-Pipeline-for-Secure-Application-Deployment/
-
+devsecops-three-tier-app
+│
+├── app/
+│   ├── backend/
+│   ├── frontend/
+│   └── database/
+│
+├── .github/
+│   └── workflows/
+│
+├── architecture/
 ├── docker/
-├── github-actions/
-├── kubernetes/
-├── terraform/
-├── monitoring/
-├── scripts/
 ├── docs/
+├── kubernetes/
+├── monitoring/
 ├── screenshots/
-└── README.md
+├── scripts/
+├── terraform/
+│
+├── docker-compose.yml
+├── README.md
+└── LICENSE
 ```
 
 ---
