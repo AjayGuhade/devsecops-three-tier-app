@@ -57,3 +57,22 @@ jobs:
         uses: hadolint/hadolint-action@v3.1.0
         with:
           dockerfile: app/frontend/Dockerfile
+
+
+      - name: Scan Backend Image with Trivy
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: devsecops-backend:latest
+          format: table
+          exit-code: 1
+          ignore-unfixed: true
+          severity: HIGH,CRITICAL
+
+      - name: Scan Frontend Image with Trivy
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: devsecops-frontend:latest
+          format: table
+          exit-code: 1
+          ignore-unfixed: true
+          severity: HIGH,CRITICAL
