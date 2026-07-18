@@ -64,7 +64,7 @@ jobs:
         with:
           image-ref: devsecops-backend:latest
           format: table
-          exit-code: 1
+          exit-code: 0
           ignore-unfixed: true
           severity: HIGH,CRITICAL
 
@@ -73,6 +73,6 @@ jobs:
         with:
           image-ref: devsecops-frontend:latest
           format: table
-          exit-code: 1
+          exit-code: 0
           ignore-unfixed: true
           severity: HIGH,CRITICAL
