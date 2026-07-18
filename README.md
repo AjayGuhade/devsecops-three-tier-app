@@ -21,6 +21,8 @@ This repository was built as a practical implementation portfolio to strengthen 
 
 ## 🎯 Objectives
 
+"This project demonstrates the implementation of a production-inspired DevSecOps pipeline for a three-tier application. It covers containerization, CI/CD automation, security scanning, Kubernetes orchestration, monitoring, Infrastructure as Code, and deployment best practices."
+
 - Containerize applications using Docker
 - Build optimized images using Multi-stage Dockerfiles
 - Deploy multi-container applications using Docker Compose
@@ -138,6 +140,17 @@ devsecops-three-tier-app
 
 ---
 
+## CI Pipeline
+
+This project uses GitHub Actions to:
+
+- Build Backend Docker Image
+- Build Frontend Docker Image
+- Lint Dockerfiles using Hadolint
+- Scan Docker Images using Trivy
+
+---
+
 ## ☸ Kubernetes
 
 - Deployments
@@ -168,14 +181,12 @@ devsecops-three-tier-app
 
 Through this project I strengthened my understanding of:
 
-- Linux Administration
-- Containerization
-- Kubernetes Workloads
-- GitHub Actions Automation
-- Infrastructure as Code
-- Cloud Native Deployment
-- DevSecOps Practices
-- Monitoring & Observability
+Built a production-style CI pipeline.
+Integrated security scanning into CI.
+Deployed a three-tier application on Kubernetes.
+Implemented Infrastructure as Code using Terraform.
+Configured monitoring with Prometheus and Grafana.
+Practiced GitOps-style workflows and DevSecOps principles
 
 ---
 
